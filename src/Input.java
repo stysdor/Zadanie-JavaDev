@@ -3,21 +3,22 @@ import java.util.Scanner;
 
 public class Input {	
 	
-	 int inputLev = 0; //wysokoœæ drzewa
+	 int inputLev = 0; //wysokoÅ›Ä‡ drzewa
 	 int inputDir = 0; //kierunek drzewa
 	
 	public void startInput () {
 		Scanner input = new Scanner(System.in);
 		
 		while (InputValidation.check(inputLev, inputDir) == false ) {
-			//Wprowadzenie wysokoœci i kierunku rysowania drzewa
+			//Wprowadzenie wysokoÅ›ci i kierunku rysowania drzewa
 			try {
-				System.out.print("Podaj wysokoœæ drzewa (musi byæ liczb¹ naturaln¹ wiêksz¹ od 0): ");
+				System.out.print("Podaj wysokoÅ›Ä‡ drzewa (musi byÄ‡ liczbÄ… naturalnÄ… wiÄ™kszÄ… od 0): ");
 				inputLev = input.nextInt();
-				System.out.print("Podaj kierunek rysowanie (1 - od góry , 2 - od lewej): ");
+				System.out.print("Podaj kierunek rysowanie (1 - od gÃ³ry , 2 - od lewej): ");
 				inputDir =  input.nextInt();
 			} catch(InputMismatchException ex) {
-				System.out.println("Nie podano liczby ca³kowitej!");
+				System.out.println("Nie podano liczby caÅ‚kowitej!");
+				input = new Scanner(System.in);
 			}
 		}
 		input.close();
